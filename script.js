@@ -11,6 +11,11 @@ const registerBtn = document.getElementById("register");
 const matchList = document.getElementById("matchList");
 const registerTab = document.getElementById("registerTab");
 const registerScreen = document.getElementById("registerScreen");
+const historyTab = document.getElementById("historyTab");
+const historyScreen = document.getElementById("historyScreen");
+const analysisTab = document.getElementById("analysisTab");
+const analysisScreen = document.getElementById("analysisScreen");
+
 
 let result;
 
@@ -57,7 +62,23 @@ registerBtn.addEventListener("click", () => {
 //登録タブを押したときの処理
 registerTab.addEventListener("click", () => {
     registerScreen.style.display = "block";
+    historyScreen.style.display = "none";
+    analysisScreen.style.display = "none";
 })
+
+//戦歴タブを押したときの処理
+historyTab.addEventListener("click", () => {
+    registerScreen.style.display = "none";
+    historyScreen.style.display = "block";
+    analysisScreen.style.display = "none";
+});
+
+//分析タブを押したときの処理
+analysisTab.addEventListener("click", () => {
+    registerScreen.style.display = "none";
+    historyScreen.style.display = "none";
+    analysisScreen.style.display = "block";
+});
 
 
 document.addEventListener("DOMContentLoaded", () => { 
