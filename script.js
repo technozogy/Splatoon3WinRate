@@ -7,8 +7,10 @@ const stage = document.getElementById("stage");
 const weapon = document.getElementById("weapon");
 const win = document.getElementById("win");
 const lose = document.getElementById("lose");
-const register = document.getElementById("register");
+const registerBtn = document.getElementById("register");
 const matchList = document.getElementById("matchList");
+const registerTab = document.getElementById("registerTab");
+const registerScreen = document.getElementById("registerScreen");
 
 let result;
 
@@ -23,7 +25,8 @@ class Match {
     }
 }
 
-register.addEventListener("click", () => {
+//登録ボタンが押された時の処理
+registerBtn.addEventListener("click", () => {
     if(win.checked){
         result = "勝ち";
     }
@@ -49,8 +52,13 @@ register.addEventListener("click", () => {
         <p>${match.result}</p>
     </div>
     `;
-
 });
+
+//登録タブを押したときの処理
+registerTab.addEventListener("click", () => {
+    registerScreen.style.display = "block";
+})
+
 
 document.addEventListener("DOMContentLoaded", () => { 
 
