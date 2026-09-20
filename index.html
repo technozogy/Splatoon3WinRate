@@ -11,26 +11,26 @@
 <body>
     <div class="header">
         <img src="images/technozogy.png">
-        <h2>Splatoon3 勝率管理アプリ</h2>
+        <h1>Splatoon3 勝率管理アプリ</h1>
     </div>
     
     <div>
         <label>日付</label>
-        <input type="date"/>
+        <input  id="date" type="date"/>
     </div>
     <div>
         <label>モード</label>
-        <select>
+        <select id="mode">
             <option>Xマッチ</option>
             <option>チャレンジ</option>
             <option>オープン</option>
-            <option>プラべ</option>
+            <option>プライベート</option>
             <option>レギュラー</option>
         </select>
     </div>
     <div>
         <label>ルール</label>
-        <select>
+        <select id="rule">
             <option>エリア</option>
             <option>ヤグラ</option>
             <option>ホコ</option>
@@ -40,7 +40,7 @@
     </div>
     <div>
         <label>ステージ</label>
-            <select>
+            <select id="stage">
                 <option>ユノハナ大渓谷</option>
                 <option>ゴンズイ地区</option>
                 <option>ヤガラ市場</option>
@@ -70,7 +70,7 @@
     </div>
     <div>
         <label>使用ブキ</label>
-        <select>
+        <select id="weapon">
             <!-- シューター -->
             <option>わかばシューター</option>
             <option>もみじシューター</option>
@@ -115,8 +115,8 @@
 
             <!-- チャージャー -->
             <option>スプラチャージャー</option>
-            <option>スプラスコープ</option>
             <option>オーダーチャージャー レプリカ</option>
+            <option>スプラスコープ</option>
             <option>スプラチャージャーコラボ</option>
             <option>スプラスコープコラボ</option>
             <option>スプラチャージャーFRST</option>
@@ -136,8 +136,8 @@
 
             <!-- ブラスター -->
             <option>ノヴァブラスター</option>
-            <option>ノヴァブラスターネオ</option>
             <option>オーダーブラスター レプリカ</option>
+            <option>ノヴァブラスターネオ</option>
             <option>ホットブラスター</option>
             <option>ホットブラスターカスタム</option>
             <option>ホットブラスター艶</option>
@@ -155,8 +155,8 @@
 
             <!-- ローラー -->
             <option>スプラローラー</option>
-            <option>スプラローラーコラボ</option>
             <option>オーダーローラー レプリカ</option>
+            <option>スプラローラーコラボ</option>
             <option>カーボンローラー</option>
             <option>カーボンローラーデコ</option>
             <option>カーボンローラーANGL</option>
@@ -173,8 +173,8 @@
             <option>パブロ</option>
             <option>パブロ・ヒュー</option>
             <option>ホクサイ</option>
-            <option>ホクサイ・ヒュー</option>
             <option>オーダーブラシ レプリカ</option>
+            <option>ホクサイ・ヒュー</option>
             <option>ホクサイ彗</option>
             <option>フィンセント</option>
             <option>フィンセント・ヒュー</option>
@@ -182,8 +182,8 @@
 
             <!-- スロッシャー -->
             <option>バケットスロッシャー</option>
-            <option>バケットスロッシャーデコ</option>
             <option>オーダースロッシャー レプリカ</option>
+            <option>バケットスロッシャーデコ</option>
             <option>ヒッセン</option>
             <option>ヒッセン・ヒュー</option>
             <option>ヒッセンASH</option>
@@ -199,8 +199,8 @@
 
             <!-- スピナー -->
             <option>バレルスピナー</option>
-            <option>バレルスピナーデコ</option>
             <option>オーダースピナー レプリカ</option>
+            <option>バレルスピナーデコ</option>
             <option>スプラスピナー</option>
             <option>スプラスピナーコラボ</option>
             <option>スプラスピナーPYTN</option>
@@ -216,8 +216,8 @@
 
             <!-- マニューバー -->
             <option>スプラマニューバー</option>
-            <option>スプラマニューバーコラボ</option>
             <option>オーダーマニューバー レプリカ</option>
+            <option>スプラマニューバーコラボ</option>
             <option>スプラマニューバー耀</option>
             <option>スパッタリー</option>
             <option>スパッタリー・ヒュー</option>
@@ -234,8 +234,8 @@
 
             <!-- シェルター -->
             <option>パラシェルター</option>
-            <option>パラシェルターソレーラ</option>
             <option>オーダーシェルター レプリカ</option>
+            <option>パラシェルターソレーラ</option>
             <option>スパイガジェット</option>
             <option>スパイガジェットソレーラ</option>
             <option>スパイガジェット繚</option>
@@ -249,8 +249,8 @@
             <option>ドライブワイパー</option>
             <option>ドライブワイパーデコ</option>
             <option>ドライブワイパーRUST</option>
-            <option>オーダーワイパー レプリカ</option>
             <option>ジムワイパー</option>
+            <option>オーダーワイパー レプリカ</option>
             <option>ジムワイパー・ヒュー</option>
             <option>ジムワイパー封</option>
             <option>デンタルワイパーミント</option>
@@ -258,22 +258,26 @@
 
             <!-- ストリンガー -->
             <option>トライストリンガー</option>
-            <option>トライストリンガーコラボ</option>
             <option>オーダーストリンガー レプリカ</option>
+            <option>トライストリンガーコラボ</option>
+            <option>トライストリンガー燈</option>
             <option>LACT-450</option>
             <option>LACT-450デコ</option>
             <option>LACT-450MILK</option>
             <option>フルイドV</option>
             <option>フルイドVカスタム</option>
-            <option>トライストリンガー燈</option>
         </select>
     </div>
     <div>
         <label>結果</label>
-        <input type="radio" name="result">勝ち
-        <input type="radio" name="result">負け
+        <input type="radio" name="result" id="win">勝ち
+        <input type="radio" name="result" id="lose">負け
     </div>
 
-    <button>登録</button>
+    <button id="register">登録</button>
+
+    <div id="matchList"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
