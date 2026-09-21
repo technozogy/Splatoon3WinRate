@@ -15,6 +15,8 @@ const historyTab = document.getElementById("historyTab");
 const historyScreen = document.getElementById("historyScreen");
 const analysisTab = document.getElementById("analysisTab");
 const analysisScreen = document.getElementById("analysisScreen");
+const winRateDisplay = document.getElementById("winRateDisplay");
+
 
 let result;
 
@@ -103,6 +105,29 @@ analysisTab.addEventListener("click", () => {
     registerScreen.style.display = "none";
     historyScreen.style.display = "none";
     analysisScreen.style.display = "block";
+});
+
+
+
+analysisMode.addEventListener("change", () => {
+    const filteredMatches = matches.filter(match => {
+        return analysisMode.value === "" ||
+                match.mode === analysisMode.value;
+    });
+
+    const winMatches = filteredMatches.filter(match => {
+        return match.result === "勝ち";
+    });
+
+    const totalCount = filteredMatches.length;
+    const winCount = winMatches.length;
+
+    const winRate = totalCount === 0 ? 0 : (winCount / totalCount) * 100;
+
+    winRateDisplay.textContent = winRate + "%";
+
+    console.log(filteredMatches);
+    console.log(winMatches);
 });
 
 

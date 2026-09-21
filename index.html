@@ -290,7 +290,271 @@
         <div id="matchList"></div>
     </div>
 
-    <div id="analysisScreen"></div>
+    <div id="analysisScreen">
+        <div>
+            <label>日付</label>
+            <input  id="analysisDate" type="date"/>
+        </div>
+        <div>
+            <label>モード</label>
+            <select id="analysisMode">
+                <option value="">未指定</option>
+                <option>Xマッチ</option>
+                <option>チャレンジ</option>
+                <option>オープン</option>
+                <option>プライベート</option>
+                <option>レギュラー</option>
+            </select>
+        </div>
+        <div>
+            <label>ルール</label>
+            <select id="analysisRule">
+                <option value="">未指定</option>
+                <option>エリア</option>
+                <option>ヤグラ</option>
+                <option>ホコ</option>
+                <option>アサリ</option>
+                <option>ナワバリ</option>
+            </select>
+        </div>
+        <div>
+            <label>ステージ</label>
+                <select id="analysisStage">
+                    <option value="">未指定</option>
+                    <option>ユノハナ大渓谷</option>
+                    <option>ゴンズイ地区</option>
+                    <option>ヤガラ市場</option>
+                    <option>マテガイ放水路</option>
+                    <option>ナメロウ金属</option>
+                    <option>マサバ海峡大橋</option>
+                    <option>キンメダイ美術館</option>
+                    <option>マヒマヒリゾート＆スパ</option>
+                    <option>海女美術大学</option>
+                    <option>チョウザメ造船</option>
+                    <option>ザトウマーケット</option>
+                    <option>スメーシーワールド</option>
+                    <option>クサヤ温泉</option>
+                    <option>ヒラメが丘団地</option>
+                    <option>ナンプラー遺跡</option>
+                    <option>マンタマリア号</option>
+                    <option>タラポートショッピングパーク</option>
+                    <option>コンブトラック</option>
+                    <option>タカアシ経済特区</option>
+                    <option>オヒョウ海運</option>
+                    <option>バイガイ亭</option>
+                    <option>ネギトロ炭鉱</option>
+                    <option>カジキ空港</option>
+                    <option>リュウグウターミナル</option>
+                    <option>デカライン高架下</option>
+                </select>
+        </div>
+        <div>
+            <label>使用ブキ</label>
+            <select id="analysisWeapon">
+                <option value="">未指定</option>
+                <!-- シューター -->
+                <option>わかばシューター</option>
+                <option>もみじシューター</option>
+                <option>スプラシューター</option>
+                <option>ヒーローシューター レプリカ</option>
+                <option>オーダーシューター レプリカ</option>
+                <option>スプラシューターコラボ</option>
+                <option>オクタシューター レプリカ</option>
+                <option>PETシューター レプリカ</option>
+                <option>スプラシューター煌</option>
+                <option>プロモデラーMG</option>
+                <option>プロモデラーRG</option>
+                <option>プロモデラー彩</option>
+                <option>.52ガロン</option>
+                <option>.52ガロンデコ</option>
+                <option>プライムシューター</option>
+                <option>プライムシューターコラボ</option>
+                <option>プライムシューターFRZN</option>
+                <option>N-ZAP85</option>
+                <option>N-ZAP89</option>
+                <option>.96ガロン</option>
+                <option>.96ガロンデコ</option>
+                <option>.96ガロン爪</option>
+                <option>スペースシューター</option>
+                <option>スペースシューターコラボ</option>
+                <option>ボールドマーカー</option>
+                <option>ボールドマーカーネオ</option>
+                <option>シャープマーカー</option>
+                <option>シャープマーカーネオ</option>
+                <option>シャープマーカーGECK</option>
+                <option>L3リールガン</option>
+                <option>L3リールガンD</option>
+                <option>L3リールガン箔</option>
+                <option>H3リールガン</option>
+                <option>H3リールガンD</option>
+                <option>H3リールガンSNAK</option>
+                <option>ボトルガイザー</option>
+                <option>ボトルガイザーフォイル</option>
+                <option>ジェットスイーパー</option>
+                <option>ジェットスイーパーカスタム</option>
+                <option>ジェットスイーパーCOBR</option>
+
+                <!-- チャージャー -->
+                <option>スプラチャージャー</option>
+                <option>オーダーチャージャー レプリカ</option>
+                <option>スプラスコープ</option>
+                <option>スプラチャージャーコラボ</option>
+                <option>スプラスコープコラボ</option>
+                <option>スプラチャージャーFRST</option>
+                <option>スプラスコープFRST</option>
+                <option>スクイックリンα</option>
+                <option>スクイックリンβ</option>
+                <option>R-PEN/5H</option>
+                <option>R-PEN/5B</option>
+                <option>4Kスコープ</option>
+                <option>4Kスコープカスタム</option>
+                <option>リッター4K</option>
+                <option>リッター4Kカスタム</option>
+                <option>14式竹筒銃・乙</option>
+                <option>14式竹筒銃・甲</option>
+                <option>ソイチューバー</option>
+                <option>ソイチューバーカスタム</option>
+
+                <!-- ブラスター -->
+                <option>ノヴァブラスター</option>
+                <option>オーダーブラスター レプリカ</option>
+                <option>ノヴァブラスターネオ</option>
+                <option>ホットブラスター</option>
+                <option>ホットブラスターカスタム</option>
+                <option>ホットブラスター艶</option>
+                <option>ラピッドブラスター</option>
+                <option>ラピッドブラスターデコ</option>
+                <option>ロングブラスター</option>
+                <option>ロングブラスターカスタム</option>
+                <option>S-BLAST91</option>
+                <option>S-BLAST92</option>
+                <option>クラッシュブラスター</option>
+                <option>クラッシュブラスターネオ</option>
+                <option>Rブラスターエリート</option>
+                <option>Rブラスターエリートデコ</option>
+                <option>RブラスターエリートWNTR</option>
+
+                <!-- ローラー -->
+                <option>スプラローラー</option>
+                <option>オーダーローラー レプリカ</option>
+                <option>スプラローラーコラボ</option>
+                <option>カーボンローラー</option>
+                <option>カーボンローラーデコ</option>
+                <option>カーボンローラーANGL</option>
+                <option>ワイドローラー</option>
+                <option>ワイドローラーコラボ</option>
+                <option>ワイドローラー惑</option>
+                <option>ヴァリアブルローラー</option>
+                <option>ヴァリアブルローラーフォイル</option>
+                <option>ダイナモローラー</option>
+                <option>ダイナモローラーテスラ</option>
+                <option>ダイナモローラー冥</option>
+
+                <!-- フデ -->
+                <option>パブロ</option>
+                <option>パブロ・ヒュー</option>
+                <option>ホクサイ</option>
+                <option>オーダーブラシ レプリカ</option>
+                <option>ホクサイ・ヒュー</option>
+                <option>ホクサイ彗</option>
+                <option>フィンセント</option>
+                <option>フィンセント・ヒュー</option>
+                <option>フィンセントBRNZ</option>
+
+                <!-- スロッシャー -->
+                <option>バケットスロッシャー</option>
+                <option>オーダースロッシャー レプリカ</option>
+                <option>バケットスロッシャーデコ</option>
+                <option>ヒッセン</option>
+                <option>ヒッセン・ヒュー</option>
+                <option>ヒッセンASH</option>
+                <option>スクリュースロッシャー</option>
+                <option>スクリュースロッシャーネオ</option>
+                <option>モップリン</option>
+                <option>モップリンD</option>
+                <option>モップリン角</option>
+                <option>オーバーフロッシャー</option>
+                <option>オーバーフロッシャーデコ</option>
+                <option>エクスプロッシャー</option>
+                <option>エクスプロッシャーカスタム</option>
+
+                <!-- スピナー -->
+                <option>バレルスピナー</option>
+                <option>オーダースピナー レプリカ</option>
+                <option>バレルスピナーデコ</option>
+                <option>スプラスピナー</option>
+                <option>スプラスピナーコラボ</option>
+                <option>スプラスピナーPYTN</option>
+                <option>イグザミナー</option>
+                <option>イグザミナー・ヒュー</option>
+                <option>ハイドラント</option>
+                <option>ハイドラントカスタム</option>
+                <option>ハイドラント圧</option>
+                <option>ノーチラス47</option>
+                <option>ノーチラス79</option>
+                <option>クーゲルシュライバー・ヒュー</option>
+                <option>クーゲルシュライバー</option>
+
+                <!-- マニューバー -->
+                <option>スプラマニューバー</option>
+                <option>オーダーマニューバー レプリカ</option>
+                <option>スプラマニューバーコラボ</option>
+                <option>スプラマニューバー耀</option>
+                <option>スパッタリー</option>
+                <option>スパッタリー・ヒュー</option>
+                <option>スパッタリーOWL</option>
+                <option>デュアルスイーパー</option>
+                <option>デュアルスイーパーカスタム</option>
+                <option>デュアルスイーパー蹄</option>
+                <option>クアッドホッパーホワイト</option>
+                <option>クアッドホッパーブラック</option>
+                <option>ケルビン525</option>
+                <option>ケルビン525デコ</option>
+                <option>ガエンFF</option>
+                <option>ガエンFFカスタム</option>
+
+                <!-- シェルター -->
+                <option>パラシェルター</option>
+                <option>オーダーシェルター レプリカ</option>
+                <option>パラシェルターソレーラ</option>
+                <option>スパイガジェット</option>
+                <option>スパイガジェットソレーラ</option>
+                <option>スパイガジェット繚</option>
+                <option>24式張替傘・甲</option>
+                <option>24式張替傘・乙</option>
+                <option>キャンピングシェルター</option>
+                <option>キャンピングシェルターソレーラ</option>
+                <option>キャンピングシェルターCREM</option>
+
+                <!-- ワイパー -->
+                <option>ドライブワイパー</option>
+                <option>ドライブワイパーデコ</option>
+                <option>ドライブワイパーRUST</option>
+                <option>ジムワイパー</option>
+                <option>オーダーワイパー レプリカ</option>
+                <option>ジムワイパー・ヒュー</option>
+                <option>ジムワイパー封</option>
+                <option>デンタルワイパーミント</option>
+                <option>デンタルワイパースミ</option>
+
+                <!-- ストリンガー -->
+                <option>トライストリンガー</option>
+                <option>オーダーストリンガー レプリカ</option>
+                <option>トライストリンガーコラボ</option>
+                <option>トライストリンガー燈</option>
+                <option>LACT-450</option>
+                <option>LACT-450デコ</option>
+                <option>LACT-450MILK</option>
+                <option>フルイドV</option>
+                <option>フルイドVカスタム</option>
+            </select>
+        </div>
+
+        <div>
+            <label>勝率</label>
+            <div id="winRateDisplay"></div>
+        </div>
+    </div>
 
 <script src="script.js"></script>
 </body>
