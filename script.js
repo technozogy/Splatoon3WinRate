@@ -107,14 +107,15 @@ analysisTab.addEventListener("click", () => {
     analysisScreen.style.display = "block";
 });
 
-
-
-analysisMode.addEventListener("change", () => {
+//勝率計算をし表示する関数
+function analysisMatches(){
     const filteredMatches = matches.filter(match => {
-        return analysisMode.value === "" ||
-                match.mode === analysisMode.value;
+        return (analysisDate.value === "" || match.date === analysisDate.value) 
+                && (analysisMode.value === "" || match.mode === analysisMode.value)
+                && (analysisRule.value === "" || match.rule === analysisRule.value)
+                && (analysisStage.value === "" || match.stage === analysisStage.value)
+                && (analysisWeapon.value === "" || match.weapon === analysisWeapon.value);
     });
-
     const winMatches = filteredMatches.filter(match => {
         return match.result === "勝ち";
     });
@@ -125,10 +126,13 @@ analysisMode.addEventListener("change", () => {
     const winRate = totalCount === 0 ? 0 : (winCount / totalCount) * 100;
 
     winRateDisplay.textContent = winRate + "%";
+}
 
-    console.log(filteredMatches);
-    console.log(winMatches);
-});
+analysisDate.addEventListener("change", analysisMatches);
+analysisMode.addEventListener("change", analysisMatches);
+analysisRule.addEventListener("change", analysisMatches);
+analysisStage.addEventListener("change", analysisMatches);
+analysisWeapon.addEventListener("change", analysisMatches);
 
 
 document.addEventListener("DOMContentLoaded", () => { 
