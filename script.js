@@ -16,7 +16,6 @@ const historyScreen = document.getElementById("historyScreen");
 const analysisTab = document.getElementById("analysisTab");
 const analysisScreen = document.getElementById("analysisScreen");
 
-
 let result;
 
 class Match {
@@ -46,17 +45,40 @@ registerBtn.addEventListener("click", () => {
                 result);
 
     matches.push(match);
+});
 
-    matchList.innerHTML += `
-    <div>
-        <p>${match.date}</p>
-        <p>${match.mode}</p>
-        <p>${match.rule}</p>
-        <p>${match.stage}</p>
-        <p>${match.weapon}</p>
-        <p>${match.result}</p>
-    </div>
-    `;
+//戦歴再描画処理関数
+function renderMatches(){
+    matchList.innerHTML = "";
+
+    matches.forEach((match, index) => {
+     matchList.innerHTML += `
+            <div>
+                <p>${match.date}</p>
+                <p>${match.mode}</p>
+                <p>${match.rule}</p>
+                <p>${match.stage}</p>
+                <p>${match.weapon}</p>
+                <p>${match.result}</p>
+
+
+                <button class="deleteBtn" data-index="${index}">
+                    削除
+                </button>
+            </div>
+     `;
+    });
+}
+
+matchList.addEventListener("click", (event) => {
+    if(event.target.classList.contains("deleteBtn")){
+        const index = Number(event.target.dataset.index);
+
+        matches.splice(index, 1); //splice(開始位置, 削除する個数)
+
+        renderMatches();
+    }
+
 });
 
 //登録タブを押したときの処理
@@ -64,13 +86,16 @@ registerTab.addEventListener("click", () => {
     registerScreen.style.display = "block";
     historyScreen.style.display = "none";
     analysisScreen.style.display = "none";
-})
+});
 
 //戦歴タブを押したときの処理
 historyTab.addEventListener("click", () => {
     registerScreen.style.display = "none";
     historyScreen.style.display = "block";
     analysisScreen.style.display = "none";
+
+    renderMatches();
+
 });
 
 //分析タブを押したときの処理
