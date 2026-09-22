@@ -15,7 +15,10 @@ const historyTab = document.getElementById("historyTab");
 const historyScreen = document.getElementById("historyScreen");
 const analysisTab = document.getElementById("analysisTab");
 const analysisScreen = document.getElementById("analysisScreen");
+const totalMatchesDisplay = document.getElementById("totalMatchesDisplay");
 const winRateDisplay = document.getElementById("winRateDisplay");
+const winMatchesDisplay = document.getElementById("winMatchesDisplay");
+
 
 
 let result;
@@ -105,9 +108,11 @@ analysisTab.addEventListener("click", () => {
     registerScreen.style.display = "none";
     historyScreen.style.display = "none";
     analysisScreen.style.display = "block";
+
+    analysisMatches();
 });
 
-//勝率計算をし表示する関数
+//入力された条件を元に分析し、その結果を表示する関数
 function analysisMatches(){
     const filteredMatches = matches.filter(match => {
         return (analysisDate.value === "" || match.date === analysisDate.value) 
@@ -125,9 +130,13 @@ function analysisMatches(){
 
     const winRate = totalCount === 0 ? 0 : (winCount / totalCount) * 100;
 
+    totalMatchesDisplay.textContent = totalCount + "試合";
+    winMatchesDisplay.textContent = winCount + "勝";
     winRateDisplay.textContent = winRate + "%";
+
 }
 
+//条件入力をするたびに分析をする処理し、勝率を画面に表示する処理
 analysisDate.addEventListener("change", analysisMatches);
 analysisMode.addEventListener("change", analysisMatches);
 analysisRule.addEventListener("change", analysisMatches);
