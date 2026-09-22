@@ -19,6 +19,8 @@ const totalMatchesDisplay = document.getElementById("totalMatchesDisplay");
 const winRateDisplay = document.getElementById("winRateDisplay");
 const winMatchesDisplay = document.getElementById("winMatchesDisplay");
 
+const apiMessage = document.getElementById("apiMessage");
+
 
 
 let result;
@@ -148,3 +150,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+
+fetch("http://localhost:5217/api/hello")
+    .then(response => response.text())
+    .then(data => {
+        apiMessage.textContent = data;
+    });
+
+
