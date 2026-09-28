@@ -7,5 +7,7 @@ public class Match
     public string Stage { get; set; } = "";
     public string Weapon { get; set; } = "";
     public string Result { get; set; } = "";
+
+    public string? Memo { get; set; }
     
 }

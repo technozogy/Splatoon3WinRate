@@ -5,6 +5,7 @@ const mode = document.getElementById("mode");
 const rule = document.getElementById("rule");
 const stage = document.getElementById("stage");
 const weapon = document.getElementById("weapon");
+const memo = document.getElementById("memo");
 const win = document.getElementById("win");
 const lose = document.getElementById("lose");
 const registerBtn = document.getElementById("register");
@@ -26,12 +27,13 @@ const apiMessage = document.getElementById("apiMessage");
 let result;
 
 class Match {
-    constructor(date, mode, rule, stage, weapon, result){
+    constructor(date, mode, rule, stage, weapon, memo, result){
         this.date = date;
         this.mode = mode;
         this.rule = rule;
         this.stage = stage;
         this.weapon = weapon;
+        this.memo = memo;
         this.result = result;
     }
 }
@@ -49,6 +51,7 @@ registerBtn.addEventListener("click", () => {
                 rule.value, 
                 stage.value, 
                 weapon.value, 
+                memo.value,
                 result);
 
     matches.push(match);
@@ -66,6 +69,7 @@ function renderMatches(){
                 <p>${match.rule}</p>
                 <p>${match.stage}</p>
                 <p>${match.weapon}</p>
+                <p>${match.memo}</p>
                 <p>${match.result}</p>
 
 
